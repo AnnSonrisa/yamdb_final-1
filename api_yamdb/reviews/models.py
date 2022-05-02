@@ -116,6 +116,8 @@ class Title(models.Model):
         rating = self.reviews.aggregate(Avg('score')).get('score__avg')
         if rating:
             return round(rating)
+        else:
+            return None
 
 
 class Review(models.Model):

@@ -1,4 +1,6 @@
-### Описание проекта YaMDb_final:
+![example workflow](https://github.com/ivanshtepaweb/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+
+### Описание проекта YaMDb:
 
 Вы можете найти любимое произведение в проекте YaMDb. 
 Это может быть книга, фильм или музыкальное произведение. Есть возможность поделиться своим мнением через комментарии,
@@ -23,8 +25,8 @@ docker -v
 Клонируйте репозиторий и перейдите в него в командной строке:
 
 ```
-https://github.com/AlinaVoskoboynikova/infra_sp2.git
-cd infra_sp2
+https://github.com/ivanshtepaweb/yamdb_final
+cd yamdb_final
 ```
 
 Перейдите в папку с проектом и создайте и активируйте виртуальное окружение:
@@ -145,7 +147,13 @@ docker-compose exec web python manage.py dumpdata > fixtures.json
     }
 ]
 ```
+## Приложение работает по ссылкам:
+http://51.250.101.78/admin/
+http://51.250.101.78/redoc/
+http://51.250.101.78/api/v1/
 
-### Автор проекта yamdb:
+
+### Автор проекта yamdb_final:
 Иван Штепа  
-https://github.com/ivanshtepaweb
+https://github.com/ivanshtepaweb/
+
