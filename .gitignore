@@ -150,3 +150,6 @@ static/
 posts/static/
 media/
 
+# все файлы примеры
+*-example
+
