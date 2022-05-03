@@ -148,9 +148,9 @@ docker-compose exec web python manage.py dumpdata > fixtures.json
 ]
 ```
 ## Приложение работает по ссылкам:
-http://51.250.101.78/admin/
-http://51.250.101.78/redoc/
-http://51.250.101.78/api/v1/
+http://51.250.29.254/admin/
+http://51.250.29.254/redoc/
+http://51.250.29.254/api/v1/
 
 
 ### Автор проекта yamdb_final:
