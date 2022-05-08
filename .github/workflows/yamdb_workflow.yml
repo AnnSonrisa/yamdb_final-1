@@ -44,7 +44,7 @@ jobs:
         uses: docker/build-push-action@v2 
         with:
           context: ./api_yamdb/
-          tags: ${{ secrets.DOCKER_USERNAME }}/yamdb_final:v0.1 
+          tags: ${{ secrets.DOCKER_USERNAME }}/yamdb_final:v0.2 
           push: true
 
   deploy:
@@ -61,7 +61,7 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE }}
         script: |
           # Выполняет pull образа с DockerHub
-          # sudo docker pull ${{ secrets.DOCKER_USERNAME }}/yamdb_final:v0.1
+          # sudo docker pull ${{ secrets.DOCKER_USERNAME }}/yamdb_final:v0.2
           sudo docker-compose stop
           sudo docker-compose rm web
           touch .env
