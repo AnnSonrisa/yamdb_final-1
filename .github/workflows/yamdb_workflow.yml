@@ -65,6 +65,9 @@ jobs:
           sudo docker-compose rm web
           # Выполняет pull образа с DockerHub
           sudo docker pull ivanshtepaweb/yamdb_final:v0.2
+          #остановка всех контейнеров
+          sudo docker stop $(sudo docker ps -a -q)
+          
           sudo docker-compose up -d
 
   send_message:
