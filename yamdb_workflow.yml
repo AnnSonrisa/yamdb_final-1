@@ -43,8 +43,9 @@ jobs:
       - name: Push to Docker Hub
         uses: docker/build-push-action@v2 
         with:
-          context: ./api_yamdb/
-          tags: ${{ secrets.DOCKER_USERNAME }}/yamdb_final:v0.1 
+          context: api_yamdb/
+          file: api_yamdb/Dockerfile
+          tags: ivanshtepaweb/yamdb_final:v0.2 
           push: true
 
   deploy:
@@ -60,17 +61,13 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         script: |
-          # Выполняет pull образа с DockerHub
-          # sudo docker pull ${{ secrets.DOCKER_USERNAME }}/yamdb_final:v0.1
           sudo docker-compose stop
           sudo docker-compose rm web
-          touch .env
-          echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
-          echo DB_NAME=${{ secrets.DB_NAME }} >> .env
-          echo POSTGRES_USER=${{ secrets.POSTGRES_USER }} >> .env
-          echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
-          echo DB_HOST=${{ secrets.DB_HOST }} >> .env
-          echo DB_PORT=${{ secrets.DB_PORT }} >> .env
+          # Выполняет pull образа с DockerHub
+          sudo docker pull ivanshtepaweb/yamdb_final:v0.2
+          #остановка всех контейнеров
+          sudo docker stop $(sudo docker ps -a -q)
+
           sudo docker-compose up -d
 
   send_message:
